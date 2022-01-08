@@ -1,7 +1,8 @@
 #include <DHT.h>
+#include <ArduinoJson.h>
 
 //Constants
-#define DHTPIN 2     // what pin on the arduino is the DHT22 data line connected to
+#define DHTPIN 4     // what pin on the arduino is the DHT22 data line connected to
 #define DHTTYPE DHT22   // DHT 22  (AM2302)
 //#define DHTTYPE DHT11   // DHT 11
 DHT dht(DHTPIN, DHTTYPE); // Initialize DHT sensor for normal 16mhz Arduino
@@ -30,5 +31,5 @@ void loop() {
   Serial.println(" °C");
   // Wait a few seconds between measurements. The DHT22 should not be read at a higher frequency of
   // about once every 2 seconds. So we add a 3 second delay to cover this.
-  delay(300);
+  delay(1000);
 }  
